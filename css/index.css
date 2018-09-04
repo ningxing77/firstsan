@@ -1,0 +1,299 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header {
+	height: 0.9rem;
+	background: #ff5353;
+	display: flex;
+}
+
+.message,.sys {
+	width: 1.1rem;
+}
+.search {
+	flex: 1;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header img {
+	width: 48%;
+	height: auto;
+}
+
+.search input {
+	width: 95%;
+	height: 0.66rem;
+	background: #e13e3f;
+	border: 1px solid #ff5f5f;
+	border-radius: 5px;
+	color: #fff;
+	padding-left: 12px;
+	font-size: 0.3rem;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header > div img {
+	width: 45%;
+	height: auto;
+}
+
+.banner img {
+	width: 100%;
+	height: auto;
+}
+
+nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 0.4rem;
+}
+
+
+nav li {
+	width: 20%;
+	height:1.5rem;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
+}
+
+nav li img {
+	width: 100%;
+	height: auto;
+}
+
+nav li b {
+	font-weight: normal;
+	display: block;
+	text-align: center;
+	width: 100%;
+	line-height: 26px;
+	font-size: 0.22rem;
+	margin-top: 0.1rem;
+}
+nav li a{
+	display: block;
+	width: 70%;
+	height:70%;
+}
+.shangpin {
+	 border-top:0.26rem solid #f4f4f4;
+}
+
+.shangpin h2 {
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.3rem;
+	font-weight: normal;
+	padding: 0.2rem 0.26rem;
+	border-bottom: 1px solid #eee;
+	background-size: 0.3rem;
+	color:#ff5353;
+}
+.shangpin h2 span {
+	color: #f33;
+}
+.sp_content {
+	display: flex;
+}
+
+.sp_large {
+	 flex: 5;
+}
+.sp_large img {
+	width: 100%;
+	height: auto;
+}
+
+.sp_small {
+	flex: 7;
+	display: flex;
+	flex-wrap: wrap;
+}
+.sp_small img {
+	width: 50%;
+	height: 50%;
+}
+
+.qg_content {
+	 display: flex;
+}
+.qg_content > div{
+	 font-size: 0.24rem;
+}
+.qg_content img {
+	 width: 100%;
+	 height: auto;
+}
+.qg_content em {
+	text-align: left;
+	color: #f33;
+	font-style: normal;
+	margin-left: 0.35rem;
+}
+.qg_content span {
+	color: #888;
+	text-decoration: line-through;
+	margin-left: 0.35rem;
+}
+.dianyin {
+	overflow: hidden;}
+.dianyin h2 {
+	background: url(images/title2.jpg) no-repeat;
+	background-size: 0.3rem;}
+.dy_content {
+	display: flex;
+	padding: 0.1rem;
+	width: 110%;}
+.dy_content > div{
+	 flex: 1;
+	 padding: 0.1rem;}
+.dy_content > div img {
+	width: 100%;
+	height: auto;}
+.dy_content > div p{
+	font-size: 0.28rem;}
+.dy_content > div em {
+	font-size: 0.24rem;
+	color: #f33;
+	font-style: normal;
+}
+.yx_content {
+	display: flex;
+}
+.yx_content > div {
+	flex: 1;
+	padding: 0.2rem;
+}
+.yx_content img {
+	 width: 100%;
+	 height: auto;
+}
+
+
+.jiudian h2 {
+	
+	background-size: 0.3rem;}
+	
+.jd_content > div {
+	display: flex;
+	padding: 0.25rem 0.2rem;
+	border-bottom: 1px solid #eee;
+}
+.jd_pic {
+	flex: 16;
+}
+.jd_pic img {
+	width: 100%;
+	height: auto;
+}
+.jd_article {
+	flex: 40;
+	margin-left: 0.2rem;
+}
+.jd_price {
+	flex: 12;
+	display: flex;
+	align-items: center;
+}
+
+.jd_article h3 {
+	font-size: 0.28rem;
+}
+.jd_article p,.jd_article address,.jd_article b{
+	font-size: 0.22rem;
+	color: #888;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 0.2rem;
+}
+.jd_article p b {
+	margin-left:0.16rem;
+	font-size: 0.22rem;
+	color: #f33;
+}
+
+.jd_article > span i {
+	display: inline-block;
+	width: 1.2rem;
+	height: 0.3rem;
+	background-size: 100%;
+	margin:0 2px;
+}
+.jd_article address{
+	margin-top: 0.08rem;
+}
+.wifi {
+	background: url(../imgs/index/wifi.png ) no-repeat  center;
+}
+
+
+.jd_price em{
+	 font-size: 0.28rem;
+	 color:#ff5353;
+}
+.jd_price div > span {
+	color: #666;
+	text-decoration: line-through;
+}
+
+.pinpai h2 {
+	
+	background-size: 0.3rem;
+}
+
+.pp_content {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.pp_content a {
+	width: 20%;
+	
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+.pp_content a:nth-child(3n) {
+	 border-right:none;
+}
+.pp_content img {
+	width: 100%;
+	height: auto;
+}
+
+.add6 {
+	 margin-bottom: 1.2rem;
+}
+footer {
+	 height: 1rem;
+	 border-top: 1px solid #eee;
+	 background: #f4f4f4;
+	 display: flex;
+	 position: fixed;
+	 left: 0;
+	 bottom: 0;
+	 width: 100%;
+	 justify-content: space-around;
+	 align-items: center;
+}
+footer a {
+	width: 0.8rem;
+	font-size: 0.24rem;
+	color: #080808;
+	text-align: center;
+	text-decoration: none;
+	line-height: 0.24rem;
+}
+
+footer a img {
+	width:80%;
+	height:auto;
+}
+

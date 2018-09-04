@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/category.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message" onclick="history.back()"><img src="../imgs/index/g_back.jpg"/></div>
+			<div class="search">
+				<input type="text"  placeholder="请输入商品、商铺、服务" />
+			</div>
+			<div class="sys"><img src="../imgs/index/sao.gif"/></div>
+		</header>
+		<main id="main">
+			<aside>
+				<a href="#" class="active">商场大牌</a>
+				<a href="#">春夏上新</a>
+				<a href="#">针织毛衫</a>
+				<a href="#">A字裙</a>
+			</aside>
+			
+			<article>
+				<div class="add"><img src="../imgs/fenlei/banner.jpg"/></div>
+				<div class="dapai">
+					<h2>商场大牌 >></h2>
+					<div class="tx_content">
+						<!--<div><div><a href="pic_list.html"><img src="../imgs/list/yinman.jpg"/></a><p>茵曼</p></div></div>
+						<div><div><img src="../imgs/list/pin (2).jpg"/><p>克徕帝</p></div></div>
+						<div><div><img src="../imgs/list/pin (3).jpg"/><p>CAMEL</p></div></div>
+						<div><div><img src="../imgs/list/pin (4).jpg"/><p>HEAD</p></div></div>
+						<div><div><img src="../imgs/list/pin (5).jpg"/><p>WOLFskin</p></div></div>
+						<div><div><img src="../imgs/list/pin (6).jpg"/><p>熙世界</p></div></div>
+						<div><div><img src="../imgs/list/pin (7).jpg"/><p>美特斯邦威</p></div></div>
+						<div><div><img src="../imgs/list/pin (8).jpg"/><p>CARNIVAL</p></div></div>
+						<div><div><img src="../imgs/list/pin (9).jpg"/><p>千奈美</p></div></div>-->
+					<div v-for="item in result">
+						<div>
+							<a v-bind="{href:'pic_list.html?keyword='+item.title}">
+							<img :src="item.img"/>
+							</a>
+							<p>{{item.title}}</p>
+						</div>
+						
+					</div>
+					</div>
+				</div>
+				<div class="peijian">
+					<h2>潮流搭配 >></h2>
+					<div class="pj_content">
+						<div><div><img src="../imgs/fenlei/cp (10).jpg"/><p>甜美风</p></div>	</div>
+						<div><div><img src="../imgs/fenlei/cp (11).jpg"/><p>文艺风</p></div>	</div>
+						<div><div><img src="../imgs/fenlei/cp (14).jpg"/><p>休闲风</p></div>	</div>
+					</div>
+				</div>
+			</article>
+		</main>
+		<script src="../js/public.js " type="text/javascript" charset="utf-8"></script>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		var app = new Vue({
+			el:"#main",
+			data:{
+				result:[]
+			},
+			created(){
+				axios.get("/qwe").then((res)=>{
+					console.log(res);
+					this.result = res.data;
+				})
+			}
+		})
+	</script>
+	</body>
+</html>
+ 

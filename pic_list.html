@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/pic_list.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message" onclick="history.back()"><img src="../imgs/index/g_back.jpg"/></div>
+			<div class="search">
+				<input type="text" placeholder="请输入商品、商家、服务" />
+			</div>
+			<div class="sys"><img src="../imgs/index/sao.gif"/></div>
+		</header>
+		
+		<div class="shaixuan">
+			<a href="#" class="active">综合</a>
+			<a href="#">价格</a>
+			<a href="#" class="icon">销量</a>
+			<a href="#" class="icon">筛选</a>
+		</div>
+		
+		<div id="box">
+		<div v-if="isShow">
+			你要找的商品不存在！！！
+		</div>
+		<main v-else>
+			<div v-for="item in ary">
+				<div><img :src="item.img" v-on:click="jump(item.id)" /></div>
+				<!--<p>
+茵曼2018春装新款系带文艺范条纹牛仔背带裙女百搭V领无袖中长裙_1</p>-->
+				<p>{{item.title}}</p>
+				<!--<em>¥259 <span>5.0折</span></em>
+				<span>¥519.00</span>-->
+				<em>￥{{item.price}}.00 <span>618活动</span></em>
+					<span>{{item.pay}}付款/{{item.msg}}评价</span>
+			</div>
+			<!--<div>
+				<div><img src=" "/></div>
+				<p>
+D茵曼清新文艺纯棉绣花衬衫女长袖2017春秋新款修身白色打底衬衣1871011320</p>
+				<em>¥159<span>3.4折</span></em>
+				<span>¥479.00</span>
+			</div>
+			<div>
+				<div><img src="../imgs/pic_list/yiyi (3).jpg"/></div>
+				<p>
+D茵曼2018春新款文艺条纹拼接弹力宽松百搭翻边牛仔裤九分裤女裤F1881331687</p>
+				<em>¥239 <span>5.0折</span></em>
+				<span>¥479.00</span>
+			</div>
+			<div>
+				<div><img src="../imgs/pic_list/yiyi (4).jpg"/></div>
+				<p>
+D茵曼2018春秋新款文艺绣花水洗蓝色牛仔裤女修身显瘦长裤小脚裤1873091159</p>
+				<em>¥219<span>3.4折</span></em>
+				<span>¥659.00</span>
+			</div>
+			<div>
+				<div><img src="../imgs/pic_list/yiyi (5).jpg"/></div>
+				<p>
+D茵曼2018春新款可调节肩带洗水破洞时尚减龄九分牛仔背带裤女裤G1881563369</p>
+				<em>¥359<span>6.7折</span></em>
+				<span>¥539.00</span>
+			</div>
+			<div>
+				<div><img src="../imgs/pic_list/yiyi (6).jpg"/></div>
+				<p>
+茵曼女装春秋时尚显瘦水洗磨白弹力牛仔裤女紧身小脚裤修身长裤</p>
+				<em>¥219<span>3.4折</span></em>
+				<span>¥659.00</span>
+			</div>
+			<div>
+				<div><img src="../imgs/pic_list/yiyi (7).jpg"/></div>
+				<p>
+茵曼2018春装新款纯棉文艺百搭蝴蝶结宽松九分阔腿裤女裤牛仔裤1881334360</p>
+				<em>¥259 <span>6.9折</span></em>
+				<span>¥379.00</span>
+			</div>
+			<div>
+				<div><img src="../imgs/pic_list/yiyi (8).jpg"/></div>
+				<p>
+茵曼2018春新款宽松休闲落肩长袖棉麻套头卫衣女套衫
+</p>
+				<em>¥199 <span>5.0折</span></em>
+				<span>¥399.00</span>
+			</div>
+			<div>
+				<div><img src="../imgs/pic_list/yiyi (9).jpg"/></div>
+				<p>
+茵曼2017秋装新款复古文艺磨白显瘦丹宁牛仔裤喇叭裤女时尚九分裤1873334152</p>
+				<em>¥219 <span>3.4折</span></em>
+				<span>¥659.00</span>
+			</div>
+			<div>
+				<div><img src="../imgs/pic_list/yiyi (10).jpg"/></div>
+				<p>
+茵曼2018春装新款韩版chic时尚开叉摆绣花休闲T恤女中袖前短后长_1</p>
+				<em>¥139<span>一口价</span></em>
+				
+			</div>
+			<div>
+				<div><img src="../imgs/pic_list/yiyi (11).jpg"/></div>
+				<p>
+茵曼2018春新款棉布栀子花绣花圆领清新文艺衬衫女宽松套头衬衣</p>
+				<em>¥279 <span>一口价</span></em>
+				
+			</div>
+			<div>
+				<div><img src="../imgs/pic_list/yiyi (12).jpg"/></div>
+				<p>
+茵曼2018春新款文艺范松紧腰纯棉a字裙清新半身裙外穿宽松裙</p>
+				<em>¥299 <span>3.4折</span></em>
+				<span>¥899.00</span>
+			</div>-->
+		</main>
+			
+		</div>
+		<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var codeStr = decodeURI(location.search.split("=")[1]); 
+			console.log(typeof codeStr)
+			var app = new Vue({
+				el:"#box",
+				data:{
+					isShow:true,
+					ary:[]
+				},
+				created(){
+					if(codeStr != "undefined"){
+						
+						axios.get("/pic_list/"+codeStr).then((res)=>{
+							console.log(res)
+							if(res.data.length != 0){
+								this.isShow = false;
+								this.ary = res.data
+							}
+						})
+					}
+				},
+				methods:{
+					jump(id){
+						location = "detail.html?id="+id;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

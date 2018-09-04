@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/pay.css"/>
+	</head>
+	<body>
+		<div id="box">
+		<header>
+			<div class="message" onclick="history.back()"><img src="../imgs/index/g_back.jpg"/></div>
+			<div class="search">
+				确认订单
+			</div>
+			<div class="sys"></div>
+		</header>
+
+		<div class="shouhuo">
+			<div class="w_left">
+				<img src="../imgs/pay/dingwei.jpg"/>
+			</div>
+			<div class="w_right">
+				<div class="sh">
+					<p>收货人：zrk555</p>
+					<span>156xxxx9296</span>
+				</div>
+				<div class="sh_dizhi">
+					<p>收货地址：河南省信阳市平桥区羊山街道羊山新区二十四大街信阳职业技术学院</p>
+				</div>
+				<div class="sh_pr">
+					<p>(收货不便时，可选择免费代收服务)</p>
+				</div>
+			</div>
+		</div>
+		
+			<main>
+			<div v-for="(item,index) in ary">
+				<h2>{{index}}{{item.category}}旗舰店</h2>
+				<div class="shop_content">
+					<div>
+						<input type="checkbox" v-model="item.bool" />
+						<div class="shop_photo">
+							<img :src="item.img" />
+						</div>
+						<div class="shop_info">
+							<h3>{{item.title}}</h3>
+							<div>
+								<div class="count">
+									<button @click="jian(item,index)">-</button>
+									<input type="number" v-model="item.num"  min="1"  class="sk"/>
+									<button @click="jia(item)">+</button>
+								</div>
+								<div class="shop_price">
+									<em>￥{{item.price}}.00</em>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		
+		<footer>
+			<input type="checkbox" v-model="selectAll" v-on:change="select()" />
+			<div>
+				<p>应付金额：<em>￥{{abc}}</em></p>
+				<span>已优惠:￥0.00</span>
+			</div>
+			<button><a href="user.html">去结算({{sumCount}})</a></button>
+		</footer>		
+		</div>
+	<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#box",
+			data:{
+				ary:JSON.parse(localStorage.getItem("order")) || [],
+			   selectAll:true
+			},
+			computed:{
+				abc(){
+					var total = 0;
+					for(var i=0;i<this.ary.length;i++){
+						if(this.ary[i].bool){
+							total += this.ary[i].price*this.ary[i].num
+						}
+					}
+					return total;
+				},
+				sumCount(){
+					var total = 0;
+					for(var i=0;i<this.ary.length;i++){
+						total += this.ary[i].bool;
+					}
+					return total;
+				}
+			},
+			methods:{
+				jia(item){
+					item.num++
+				},
+				jian(item,index){
+					if(item.num <= 1){
+						if(confirm("你确定要删除这件商品吗？")){
+							this.ary.splice(index,1)
+						}
+					}else{
+						item.num--
+					}
+				},
+				select(){
+					for(var i=0;i<this.ary.length;i++){
+						if(this.selectAll){
+							this.ary[i].bool = true
+						}else{
+							this.ary[i].bool = false
+						}
+					}
+				},
+				next(){
+					if(localStorage.getItem("phone")){
+						location = "pay.html"
+					}else{
+						localStorage.setItem("loginJump","pay.html")
+						location = "denglu.html"
+					}
+					
+				}
+			}
+		})
+	</script>
+	</body>
+	
+</html>

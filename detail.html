@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/detail.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message" onclick="history.back()"><img src="../imgs/index/g_back.jpg"/></div>
+			<div class="search">商品详情</div>
+			<div class="sys"><img src=" ../imgs/detail/xinxi.jpg"/></div>
+		</header>
+		
+		<div id="box">
+		<main>
+			<div class="banner">
+				<img :src="obj.img"/>
+			</div>
+			<div class="title">
+				<p>{{obj.title}}</p>
+				<em>￥{{obj.price}}.00 <s>￥2222.00 </s> <span>618活动</span></em>
+			</div>
+			<div class="sale">
+				<span>满减</span>
+				<p>满500元，最高直减20元</p>
+			</div>
+			<div class="checked">
+				<span class="s_title">已选</span>
+				<p>茵曼服装</p>
+			</div>
+			<div class="other">
+				<div class="count">
+					<span class="s_title">数量</span>
+					<div>
+						<button @click="jian()">-</button>
+						<input type="number" v-model="num" min="1" />
+						<button @click="jia()">+</button>
+					</div>
+					<p>库存{{obj.save}}件</p>
+				</div>
+				<div class="count services">
+					<span class="s_title">服务</span>
+					<p>由茵曼服装平台发货并提供售后服务</p>
+				</div>
+			</div>
+		</main>
+		
+		<div class="msg">
+			<h2>
+				商品评论 <span>(5643评论)好评度96%</span>
+			</h2>
+			<div class="msg_content">
+				
+				<div v-for="item in obj.comment">
+					<div class="msg_user">
+						<div>{{item.name}}</div>
+						<div>
+							<em>好评</em>
+							<span>{{item.date}}</span>
+						</div>
+					</div>
+					<p>{{item.content}}</p>
+					<div class="msg_pic">
+						<ul>
+							
+							<li v-for="pic in item.pic">
+								<img :src="pic" />
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+
+			</div>
+			<div class="more">查看更多评论</div>
+		</div>
+		
+		<footer>
+			<div class="collect">收藏</div>
+			<div class="btn">
+				<button @click="addShopCar()">加入购物车</button>
+			</div>
+			<div class="buy">
+				立即购买
+			</div>
+		</footer>
+		</div>
+		<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
+			<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					obj:{},
+					num:1
+				},
+				created(){
+					var id = location.search.split("=")[1];  
+					axios.get("/detail/"+id).then((res)=>{
+						console.log(res)
+						this.obj = res.data;
+					})
+				},
+				methods:{
+					jia(){
+						if(this.num < this.obj.save){
+							this.num++
+						}
+					},
+					jian(){
+						if(this.num > 1){
+							this.num--
+						}
+					},
+					addShopCar(){
+						var data={
+							id:this.obj.id,
+							num:this.num,
+							category:this.obj.category,
+							img:this.obj.img,
+							title:this.obj.title,
+							price:this.obj.price,
+							bool:true
+						}
+						 
+						if(localStorage.getItem("shopCar")){
+							 
+							var res = JSON.parse(localStorage.getItem("shopCar"));
+							 
+							var bool = true;
+							for(var i=0;i<res.length;i++){
+								if(res[i].id == data.id){
+									res[i].num+=data.num;
+									bool = false;
+								}
+							}
+							if(bool){
+								res.push(data)
+							}
+								localStorage.setItem("shopCar",JSON.stringify(res))
+						}else{
+							 
+							var ary = [data];
+							localStorage.setItem("shopCar",JSON.stringify(ary))
+						}
+						alert("宝贝已经在车里等你了！！！")
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

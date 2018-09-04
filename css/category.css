@@ -1,0 +1,134 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header {
+	height: 1rem;
+	background: #ff5353;
+	display: flex;
+}
+
+.message,.sys {
+	width: 1.1rem;
+}
+.search {
+	flex: 1;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header img {
+	width: 48%;
+	height: auto;
+}
+
+.search input {
+	width: 95%;
+	height: 0.66rem;
+	background: #e13e3f;
+	border: 1px solid #ff5f5f;
+	border-radius: 5px;
+	color: #fff;
+	padding-left: 12px;
+	font-size: 0.3rem;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header > div img {
+	width: 45%;
+	height: auto;
+}
+
+main {
+	 display: flex;
+	 }
+aside { 
+	flex:22;
+	background: #f4f4f4;
+	border-right: 1px solid #f1f1f1;
+	 }
+aside a { 
+	display: block;
+	text-align: center;
+	line-height: 1.2rem;
+	color: #051b29; 
+	text-decoration: none; 
+	border-right: 0.02rem solid #d8d0ce;
+	border-bottom: 0.02rem solid #d8d0ce;
+	font-size: 0.28rem;
+	width: 101%;
+	}
+aside .active { 
+	background: #fff;
+	border-right:none;
+	color: #f33;
+	}
+article { 
+	flex: 53; 
+	padding: 0.23rem;
+	}
+article .add img { 
+	width: 100%; height: auto;
+	}
+article .dapai{
+	margin-top: 0.3rem;
+}
+.tx_content {
+	 display: flex;
+	 flex-wrap: wrap;
+	 }
+.tx_content > div { 
+	width: 33%;
+	 height: 2rem;
+	 display: flex; 
+	 justify-content: center;
+	 align-items: center;
+	 border-bottom: 0.02rem solid #d8d0ce;
+	 }
+.tx_content > div > div { 
+	width:80%;
+	}
+.tx_content > div > div img{
+	 width: 80%;
+	 height: auto;
+	  }
+.tx_content > div > div p{
+	font-size: 0.22rem;
+	margin-left: 0.2em;
+	padding-left: 0.1rem;
+}
+.peijian{
+	margin-top: 0.3rem;
+}
+.pj_content { 
+	display: flex;
+	margin-top: 0.2rem;
+	}
+.pj_content > div { 
+	width: 33.333333%; 
+	height: 2.1rem;
+	display: flex; 
+	justify-content: center;
+    align-items: center;
+	}
+.pj_content > div > div {
+	 width: 60%;
+	 text-align: center;
+	 }
+.pj_content > div > div p{
+	font-size: 0.22rem;
+}
+.pj_content > div > div img{ 
+	width: 100%; 
+	height: auto;
+	}
+article h2 {
+	 font-size: 0.3rem; 
+	  font-weight: normal;
+	   margin-top: 0.1rem;
+	   }
+				

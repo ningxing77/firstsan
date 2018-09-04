@@ -1,0 +1,118 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header {
+	height: 0.9rem;
+	background: #ff5353;
+	display: flex;
+}
+
+.message,.sys {
+	width: 1.1rem;
+}
+.search {
+	flex: 1;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header img {
+	width: 48%;
+	height: auto;
+}
+
+.search input {
+	width: 95%;
+	height: 0.66rem;
+	background: #e13e3f;
+	border: 1px solid #ff5f5f;
+	border-radius: 5px;
+	color: #fff;
+	padding-left: 12px;
+	font-size: 0.3rem;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header > div img {
+	width: 45%;
+	height: auto;
+}
+.shaixuan {
+	height: 0.85rem;
+	border-top: 0.02rem solid #d8cfd0;
+	border-bottom: 0.02rem solid #d8cfd0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;}
+.shaixuan a {
+	text-decoration: none;
+	color: #666;}
+.shaixuan .active {
+	color: #f33;}
+.icon { position: relative}
+.icon:after {
+	content: "";
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top:4px solid #666 ;
+	border-right:4px solid #fff ;
+	border-left:4px solid #fff ;
+	position: absolute;
+	top: 50%;
+	right:-14px;
+}
+
+main {
+	display: flex;
+	padding: 0.26rem;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+main > div {
+	width: 46%;
+	padding-bottom: 0.5rem;
+}
+main > div > div {
+	border: 1px solid #ddd;
+	height: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+main > div > div img {
+	width: 80%;
+	height: auto;
+}
+main > div p {
+	word-wrap: break-word;
+	
+	width:90%;
+	margin: 5px 0;
+	font-size: 0.22rem;
+	margin-left: 0.2rem;
+}
+
+main > div em {
+	color: #f33;
+	font-style: normal;
+	margin-left: 0.2rem;
+}
+main > div em > span {
+	border: 0.02rem solid #f33; padding: 2px 4px;
+	font-size: 0.22rem;
+	margin-left: 5px;
+	border-radius: 0.4rem;
+	padding:0 0.16rem;
+	margin-left: 0.2rem;
+}
+main > div > span {
+	color: #999;
+	
+	font-size: 0.18rem;
+}

@@ -1,0 +1,207 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header {
+	height: 0.9rem;
+	background: #ff5353;
+	display: flex;
+}
+
+.message,.sys {
+	width: 1.1rem;
+}
+.search {
+	flex: 1;
+}
+.search h2{
+	font-size: 0.32rem;
+	color: #FFFFFF;
+}
+.sys a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.sys h2{
+	font-size: 0.32rem;
+	color: #FFFFFF;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header img {
+	width: 48%;
+	height: auto;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header > div img {
+	width: 45%;
+	height: auto;
+}
+.kong{
+	width: 100%;
+	height: 2rem;
+	margin: 0.5rem;
+}
+.kong img{
+ width: 20%;
+ height: auto;
+ border-radius: 0.8rem;
+ margin-left:2.4rem;
+ margin-top:0.5rem;
+}
+
+.zhanghao {
+	margin: 0 0.8rem;
+	display: flex;
+	height: 1.6rem;
+	border-bottom: 0.01rem solid #ff5353;
+	align-items: center;
+}
+
+.zhanghao > div {
+	display: flex;
+}
+
+.zh_tupian {
+	height: 0.35rem;
+	align-items: center;
+	padding-left: 0.2rem;
+}
+
+.zh_tupian img {
+	
+	width: auto;
+	height: 100%;
+}
+
+.zh_tupian span {
+	width:1rem;
+	padding-left: 0.2rem;
+	color: #262626;
+}
+
+.shuru {
+	padding-left: 0.2rem;
+}
+
+.shuru input {
+	height: 1rem;
+	width: 5.3rem;
+	color: #CCCCCC;
+	font-size: 0.32rem;
+	border: none;
+}
+
+.mima {
+	border-top:none;
+}
+
+
+.bg {
+	height: 5rem;
+	background: #ffffff;
+}
+
+.denglu {
+	display: flex;
+	justify-content: center;
+}
+
+.denglu button {
+	background:#ff5353;
+	border: none;
+	width: 6rem;
+	height: 0.96rem;
+	border-radius: 15rem;
+	margin-top: 0.5rem;
+	color: white;
+	font-size: 0.32rem;
+}
+
+.m_z {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 0.36rem;
+}
+
+.m_z a {
+	text-decoration: none;
+	font-size: 0.2rem;
+	padding: 0 0.3rem;
+}
+
+.mf {
+	color: #fe603d;
+}
+
+.zh {
+	color: #b3a7a9;
+}
+
+.hz {
+	display: flex;
+	justify-content: center;
+}
+
+.hz_s {
+	display: flex;
+	width: 90%;
+	border-bottom: 0.01rem dashed #ff5353;
+	margin-top: 2rem;
+	padding-bottom: 0.2rem;
+	justify-content: center;
+}
+
+.hz_s span {
+	color:#ff5353;
+}
+
+.wqw {
+	display: flex;
+	height: 2.46rem;
+	justify-content: space-between;
+	align-items: center;
+	background: #F4F4F4;
+}
+
+.wqw > div {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.wqw img {
+	width: 50%;
+	height: auto;
+}
+
+.wechat {
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+.qq {
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+.weibo {
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+.wqw span {
+	width: 100%;
+	text-align: center;
+	color: #66666e;
+	padding-top: 0.15rem;
+}
+
